@@ -11,4 +11,7 @@ test:
 format:
 	black $$(git ls-files '*.py')
 
-all: install lint test format
+deploy:
+	echo "deploy command goes here"
+
+all: install lint test format deploy
