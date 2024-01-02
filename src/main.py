@@ -1,6 +1,7 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from model_lib import predict
+from preproc_model import LogScaling, TransformationPipeline
 import json
 import uvicorn
 
@@ -13,9 +14,8 @@ async def get():
 
 
 @app.post("/predict/", status_code=200)
-def get_prediction(payload):
-    test_arr = json.loads(payload)["test_data"]
-    test_arr = json.loads(test_arr)
+def get_prediction(payload:dict):
+    test_arr = json.loads(payload["test_data"])
     prediction = predict(test_arr)
 
     if not prediction:

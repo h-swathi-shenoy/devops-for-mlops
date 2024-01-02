@@ -1,19 +1,11 @@
 import pandas as pd
 import numpy as np
 from pathlib import Path
-from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
-import logging
-from sklearn.model_selection import train_test_split, KFold, cross_val_score
-from sklearn.pipeline import Pipeline
-from sklearn.compose import ColumnTransformer
-from sklearn.impute import SimpleImputer
-from sklearn.preprocessing import StandardScaler, OneHotEncoder
-from sklearn.base import BaseEstimator, TransformerMixin
 import tensorflow as tf
 import joblib
 import json
-from preproc_model import TransformationPipeline, LogScaling
+from preproc_model import TransformationPipeline
 from preproc_model import RegressorModel
 
 
