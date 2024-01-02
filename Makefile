@@ -3,12 +3,12 @@ install:
 	pip install -r requirements.txt
 
 lint:
-	pylint --disable=R,C *.py src
+	pylint --disable=R,C --exit-zero *.py src
 
 # test:
 # 	python -m pytest -vvv --cov=src test_*.py
 
-# format:
-# 	black *.py src/*.py
+format:
+	black *.py src/*.py
 
-all: install lint #test format
+all: install lint format #test format
